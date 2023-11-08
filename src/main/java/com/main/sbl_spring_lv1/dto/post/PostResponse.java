@@ -26,6 +26,3 @@ public class PostResponse extends DtoTimeStamp {
         this.modifiedAt = post.getModifiedAt();
     }
 }
-
-// 응답에는 password가 있으면 안된다.
-//private String password;
