@@ -1,6 +1,5 @@
 package com.main.sbl_spring_lv1.service;
 
-import com.main.sbl_spring_lv1.dto.post.PostDeleteRequest;
 import com.main.sbl_spring_lv1.dto.post.PostRequest;
 import com.main.sbl_spring_lv1.dto.post.PostResponse;
 import com.main.sbl_spring_lv1.entity.Post;
@@ -39,9 +38,9 @@ public class PostService {
         throw new PostPasswordNotMatchedException();
     }
 
-    public void delete(Long id, PostDeleteRequest req) {
+    public void delete(Long id, String password) {
         Post post =findPost(id);
-        if (req.getPassword().equals(post.getPassword()))
+        if (password.equals(post.getPassword()))
             postRepository.delete(post);
         throw new PostPasswordNotMatchedException();
     }
