@@ -38,10 +38,12 @@ public class PostService {
         throw new PostPasswordNotMatchedException();
     }
 
-    public void delete(Long id, String password) {
+    public Long delete(Long id, String password) {
         Post post =findPost(id);
-        if (password.equals(post.getPassword()))
+        if (password.equals(post.getPassword())){
             postRepository.delete(post);
+            return id;
+        }
         throw new PostPasswordNotMatchedException();
     }
 
