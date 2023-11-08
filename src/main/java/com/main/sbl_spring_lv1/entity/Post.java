@@ -1,12 +1,11 @@
-package com.main.sbl_spring_lv1.model;
+package com.main.sbl_spring_lv1.entity;
 
-import com.main.sbl_spring_lv1.dto.request.PostRequestDto;
+import com.main.sbl_spring_lv1.dto.post.PostRequest;
+import com.main.sbl_spring_lv1.entity.common.EntityTimestamp;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Entity
 @Getter
@@ -14,7 +13,7 @@ import java.util.Date;
 // @AllArgsConstructor id를 개발자가 건들 수 있게 하면 안될 것 같다.
 @Table(name = "post")
 @NoArgsConstructor
-public class Post {
+public class Post extends EntityTimestamp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // db primary key(id) 자동생성
     private Long id;
@@ -24,21 +23,12 @@ public class Post {
     private String author;
     @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "contents", nullable = false, length = 1000)
+    @Column(name = "contents", nullable = false, length = 10000)
     private String contents;
 
-
-    // TODO: 2023-11-08 작성일자 자동으로 생성되는거 알아보기
-    @Column(name = "creationDate", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Date creationDate;
-
-
-    public Post(PostRequestDto req) {
-        this.id = req.getId();
+    public void update(PostRequest req) {
         this.title = req.getTitle();
-        this.author =req.getAuthor();
-        this.password = req.getPassword();
         this.contents = req.getContents();
+        this.author = req.getAuthor();
     }
 }
