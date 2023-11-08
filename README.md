@@ -12,3 +12,7 @@ RESTFul api 설계, postman을 통한 테스트
 Entity, Dto의 상속
 
 사용자 정의 예외와 GlobalExceptionHandler
+
+
+## 제출물
+document 디렉토리에 api명세, erd, usecase 있습니다.
