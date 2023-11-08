@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2023-11-07T10:44:12.537Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="YPszk9w84BXioRzJIiUk" version="22.0.8" type="device">
+  <diagram name="페이지-1" id="rYpKMogJZplE9iqiIu7q">
+    <mxGraphModel dx="1674" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AficWGPzd1afPrE10DW0-9" value="게시글 서비스" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="430" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-10" value="사용자" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="190" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-15" value="게시글 작성" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-16" value="선택한 게시글 조회" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-17" value="게시글 목록 조회&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="320" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-18" value="선택한 게시글 수정&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="380" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AficWGPzd1afPrE10DW0-19" value="선택한 게시글 삭제" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="250" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
