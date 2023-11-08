@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor  // 서비스 객체  자동 autowire 위해
-@RequestMapping("/post")
+@RequestMapping("/posts")
 @Tag(name = "게시글", description = "게시글 CRUD API")
 public class PostController {
     // controller의 역할은 적절한 url, 적절한 요청에 따른 처리 지시, 처리 결과 반환
