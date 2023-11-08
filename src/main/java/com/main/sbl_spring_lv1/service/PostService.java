@@ -18,7 +18,7 @@ public class PostService {
     private final PostRepository postRepository;
 
     public List<PostResponse> readAll() {
-        return postRepository.findAll().stream().map(PostResponse::new).toList(); // PostResponseDto 클래스에 Post를 매개변수로 받는 생성자가 있기에 사용 가능
+        return postRepository.findAllByOrderByCreatedAtDesc().stream().map(PostResponse::new).toList(); // PostResponseDto 클래스에 Post를 매개변수로 받는 생성자가 있기에 사용 가능
     }
 
     public PostResponse create(PostRequest req) {
