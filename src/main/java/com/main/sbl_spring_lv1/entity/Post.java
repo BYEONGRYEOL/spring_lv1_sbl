@@ -17,13 +17,13 @@ public class Post extends EntityTimestamp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // db primary key(id) 자동생성
     private Long id;
-    @Column(name = "title", nullable = false, length = 100) // 문제엔 없지만 제목이 100자가 넘으면 보기 싫을 것 같아서..
+    @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "author", nullable = false)
     private String author;
     @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "contents", nullable = false, length = 10000)
+    @Column(name = "contents", nullable = false)
     private String contents;
 
     public void update(PostRequest req) {
