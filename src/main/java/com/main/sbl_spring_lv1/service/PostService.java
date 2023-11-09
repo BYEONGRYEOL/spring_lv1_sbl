@@ -17,6 +17,9 @@ import java.util.List;
 public class PostService {
     private final PostRepository postRepository;
 
+    public PostResponse read(Long id) {
+        return new PostResponse(findPost(id));
+    }
     public List<PostResponse> readAll() {
         return postRepository.findAllByOrderByCreatedAtDesc().stream().map(PostResponse::new).toList(); // PostResponseDto 클래스에 Post를 매개변수로 받는 생성자가 있기에 사용 가능
     }
@@ -38,6 +41,7 @@ public class PostService {
         throw new PostPasswordNotMatchedException();
     }
 
+
     public Long delete(Long id, String password) {
         Post post =findPost(id);
         if (password.equals(post.getPassword())){
@@ -47,9 +51,12 @@ public class PostService {
         throw new PostPasswordNotMatchedException();
     }
 
+
+
     private Post findPost(Long id){
         Post post = postRepository.findById(id).orElseThrow(PostNotFoundException::new);
         return post;
     }
+
 
 }

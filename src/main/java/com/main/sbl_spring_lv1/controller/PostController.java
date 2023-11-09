@@ -18,13 +18,12 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor  // 서비스 객체  자동 autowire 위해
-@RequestMapping("/posts")
 @Tag(name = "게시글", description = "게시글 CRUD API")
 public class PostController {
     // controller의 역할은 적절한 url, 적절한 요청에 따른 처리 지시, 처리 결과 반환
     private final PostService postService; // final로 선언해서 RequiredArgsConstructor 로 생성자 포함
 
-    @GetMapping("")
+    @GetMapping("/posts")
     @Operation(summary = "게시글 목록 조회", description = "모든 게시글 목록을 조회합니다.")
     @ApiResponse(responseCode = "200", description = "성공",
             content = {@Content(
@@ -34,6 +33,23 @@ public class PostController {
     )
     public List<PostResponse> readAll() {
         return postService.readAll();
+    }
+
+
+    @GetMapping("/post/{id}")
+    @Operation(summary = "게시글 조회", description = "게시글 id로 게시글 한 개를 조회합니다.")
+    @ApiResponses(value={
+            @ApiResponse(responseCode = "200", description = "성공",
+            content = {@Content(
+                    mediaType = "application/json",
+                    schema = @Schema(implementation = PostResponse.class)
+            )})
+    })
+    public PostResponse read(
+            @PathVariable
+            @Schema(description = "게시글 id")
+            Long id){
+        return postService.read(id);
     }
 
     @ResponseBody
@@ -48,7 +64,7 @@ public class PostController {
 
 
     @ResponseBody
-    @PutMapping("/{id}")
+    @PutMapping("/post/{id}")
     @Operation(summary = "게시글 수정", description = "제목, 작성자, 작성 내용을 수정하고 수정한 게시글을 반환받습니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "성공", content = {@Content(
@@ -67,7 +83,7 @@ public class PostController {
         return postService.update(id, req);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("post/{id}")
 
     @Operation(summary = "게시글 삭제", description = "게시글을 삭제한 후 삭제된 게시글 id를 반환받습니다.")
     @ApiResponses(value = {
