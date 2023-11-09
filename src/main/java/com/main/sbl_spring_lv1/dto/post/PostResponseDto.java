@@ -1,13 +1,13 @@
 package com.main.sbl_spring_lv1.dto.post;
 
-import com.main.sbl_spring_lv1.dto.common.DtoTimeStamp;
+import com.main.sbl_spring_lv1.dto.common.TimeStampDto;
 import com.main.sbl_spring_lv1.entity.Post;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Getter
 @Schema(description = "게시글 응답 스키마")
-public class PostResponse extends DtoTimeStamp {
+public class PostResponseDto extends TimeStampDto {
     @Schema(description = "게시글 db id")
     private Long id;
     @Schema(description = "제목")
@@ -17,7 +17,7 @@ public class PostResponse extends DtoTimeStamp {
     @Schema(description = "작성 내용")
     private String contents;
 
-    public PostResponse(Post post){
+    public PostResponseDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
         this.author = post.getAuthor();

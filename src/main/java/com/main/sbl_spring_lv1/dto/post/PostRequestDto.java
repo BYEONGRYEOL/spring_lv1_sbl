@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 @Schema(description = "게시글 요청 스키마")
-public class PostRequest {
+public class PostRequestDto {
     @Schema(description = "제목")
     private String title;
     @Schema(description = "작성자 명")
@@ -19,13 +19,7 @@ public class PostRequest {
     private String password;
 
     // postrequest는 post를 위해 존재한다. post가 request를 알게 하는 것보다 request가 post를 알게 하는 것이 의존성 관리에 좋을듯
-    public Post toEntity(){
-        Post post = new Post();
-        post.setTitle(title);
-        post.setContents(contents);
-        post.setPassword(password);
-        post.setAuthor(author);
-        return post;
+    public Post toEntity() {
+        return new Post(title, contents, password, author);
     }
-
 }
