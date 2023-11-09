@@ -1,7 +1,7 @@
 package com.main.sbl_spring_lv1.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.main.sbl_spring_lv1.dto.post.PostRequest;
+import com.main.sbl_spring_lv1.dto.post.PostRequestDto;
 import com.main.sbl_spring_lv1.service.PostService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,8 +63,8 @@ class PostControllerTest {
     void delete() {
     }
 
-    public PostRequest createReq() {
-        return new PostRequest("title", "author", "contents", "password");
+    public PostRequestDto createReq() {
+        return new PostRequestDto("title", "author", "contents", "password");
     }
 
 }
